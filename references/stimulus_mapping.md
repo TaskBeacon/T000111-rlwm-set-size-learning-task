@@ -1,0 +1,19 @@
+# Stimulus Mapping
+
+## Mapping Table
+
+| Condition | Stage/Phase | Stimulus IDs | Participant-Facing Content | Source Paper ID | Evidence (quote/figure/table) | Implementation Mode | Asset References | Notes |
+|---|---|---|---|---|---|---|---|---|
+| `set_size_2` | `block_familiarization` | `familiarization_header`, two `stimulus_*` primitives | Two distinguishable colored geometric forms shown together before learning begins. | `PAPER_PRIMARY`; `COLLINS_FRANK_2012` | Primary Fig. 1a shows block-specific visual sets; original Methods requires whole-set familiarization. | `psychopy_builtin` | `config/*.yaml` | Explicit horizontal anchors with 170 px spacing. |
+| `set_size_3` | `block_familiarization` | `familiarization_header`, three `stimulus_*` primitives | Three distinguishable colored forms shown together. | `PAPER_PRIMARY`; `COLLINS_FRANK_2012` | Same protocol evidence; set size is the number of within-block stimuli. | `psychopy_builtin` | `config/*.yaml` | Centered row. |
+| `set_size_4` | `block_familiarization` | `familiarization_header`, four `stimulus_*` primitives | Four distinguishable colored forms shown together. | `PAPER_PRIMARY`; `COLLINS_FRANK_2012` | Same protocol evidence. | `psychopy_builtin` | `config/*.yaml` | Centered row. |
+| `set_size_5` | `block_familiarization` | `familiarization_header`, five `stimulus_*` primitives | Five distinguishable colored forms shown together. | `PAPER_PRIMARY`; `COLLINS_FRANK_2012` | Same protocol evidence. | `psychopy_builtin` | `config/*.yaml` | Centered row. |
+| `set_size_6` | `block_familiarization` | `familiarization_header`, six `stimulus_*` primitives | Six distinguishable colored forms shown together. | `PAPER_PRIMARY`; `COLLINS_FRANK_2012` | Same protocol evidence. | `psychopy_builtin` | `config/*.yaml` | Total span is 850 px at 1280 px width, leaving safe margins. |
+| `set_size_2` | `stimulus_response` | one dynamic `stimulus_*` primitive | One centered colored shape; participant presses F, G, or H within 1.5 s. | `PAPER_PRIMARY` | Primary Methods and Fig. 1a specify one stimulus, three actions, and set size 2. | `psychopy_builtin` | `config/*.yaml` | Internal condition and correct key are never displayed. |
+| `set_size_3` | `stimulus_response` | one dynamic `stimulus_*` primitive | One centered colored shape; same response rule. | `PAPER_PRIMARY` | Primary Methods and Fig. 1a, set size 3. | `psychopy_builtin` | `config/*.yaml` | Visual trial is identical across load levels; only memory load differs. |
+| `set_size_4` | `stimulus_response` | one dynamic `stimulus_*` primitive | One centered colored shape; same response rule. | `PAPER_PRIMARY` | Primary Methods, set size 4. | `psychopy_builtin` | `config/*.yaml` | No redundant key labels on the trial screen. |
+| `set_size_5` | `stimulus_response` | one dynamic `stimulus_*` primitive | One centered colored shape; same response rule. | `PAPER_PRIMARY` | Primary Methods, set size 5. | `psychopy_builtin` | `config/*.yaml` | No load cue is shown. |
+| `set_size_6` | `stimulus_response` | one dynamic `stimulus_*` primitive | One centered colored shape; same response rule. | `PAPER_PRIMARY` | Primary Methods and Fig. 1a, set size 6. | `psychopy_builtin` | `config/*.yaml` | No load cue is shown. |
+| `all` | `feedback` | `feedback_correct`, `feedback_incorrect`, `feedback_timeout` | Green “正确 +1”, red “错误 0”, or gray “未作答 0”. | `PAPER_PRIMARY` | Primary Methods specifies truthful binary correct/incorrect or +1/0 feedback for stable mappings. | `psychopy_builtin` | `config/*.yaml` | Timeout is an inferred neutral zero-outcome branch. |
+| `all` | `inter_trial_interval` | `fixation` | Centered fixation cross for 0.5 s. | `PAPER_PRIMARY` | Primary Methods specifies a typical 0.5 s ITI. | `psychopy_builtin` | `config/*.yaml` | Neutral separation between trials. |
+

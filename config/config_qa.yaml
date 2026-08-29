@@ -1,0 +1,62 @@
+subinfo_fields: [{name: subject_id, type: int, constraints: {min: 101, max: 999999, digits: 6}}]
+subinfo_mapping: {subject_id: 被试编号（六位数字）, Participant Information: 被试信息, registration_failed: 登记失败, registration_successful: 登记成功, invalid_input: "{field} 输入无效"}
+window: {size: [1280, 720], units: pix, screen: 0, bg_color: white, fullscreen: false, monitor_width_cm: 35.5, monitor_distance_cm: 60}
+task:
+  task_name: rlwm_set_size_learning_task
+  task_version: 0.1.0
+  save_path: ./outputs/qa
+  language: Chinese
+  voice_name: zh-CN-YunyangNeural
+  voice_enabled: false
+  seed_mode: same_within_sub
+  overall_seed: 111111
+  total_blocks: 5
+  total_trials: 40
+  trial_per_block: 8
+  trials_per_block: 8
+  conditions: [set_size_2, set_size_3, set_size_4, set_size_5, set_size_6]
+  condition_weights: null
+  set_size_schedule: [2, 3, 4, 5, 6]
+  iterations_per_stimulus: 2
+  shape_ids: [stimulus_circle, stimulus_square, stimulus_triangle, stimulus_diamond, stimulus_pentagon, stimulus_hexagon]
+  response_keys: [f, g, h]
+  key_list: [f, g, h]
+  continue_key: space
+  preview_spacing_px: 170
+  cognitive_domain: [reinforcement_learning, working_memory, instrumental_learning]
+  variant: baseline
+  delta: 1
+timing: {response_window_s: 1.5, feedback_duration_s: 0.75, iti_duration_s: 0.5}
+stimuli:
+  instruction_text: {type: text, font: SimHei, text: "你将学习不同图形与按键之间的固定对应关系。\n\n每组开始时会展示本组的全部图形。随后每次只出现一个图形，请在 1.5 秒内按 F、G 或 H 键。\n每个图形都只有一个正确按键；同一组内对应关系始终不变。屏幕会如实显示正确或错误。\n\n按空格键开始。", color: "#111827", height: 28, wrapWidth: 1060, pos: [0, 0]}
+  familiarization_header: {type: text, font: SimHei, text: "第 {block_number}/{total_blocks} 组：请熟悉以下 {set_size} 个图形\n\n准备好后按空格键开始学习", color: "#111827", height: 28, wrapWidth: 1100, pos: [0, 220]}
+  block_break: {type: text, font: SimHei, text: "已完成第 {block_number}/{total_blocks} 组。\n\n按空格键继续。", color: "#111827", height: 30, wrapWidth: 1000, pos: [0, 0]}
+  good_bye_text: {type: text, font: SimHei, text: "任务完成，感谢参与。\n\n按空格键退出。", color: "#111827", height: 32, wrapWidth: 1000, pos: [0, 0]}
+  feedback_correct: {type: text, font: SimHei, text: "正确  +1", color: "#15803D", height: 48, pos: [0, 0]}
+  feedback_incorrect: {type: text, font: SimHei, text: "错误  0", color: "#B91C1C", height: 48, pos: [0, 0]}
+  feedback_timeout: {type: text, font: SimHei, text: "未作答  0", color: "#6B7280", height: 44, pos: [0, 0]}
+  fixation: {type: text, text: "+", color: "#374151", height: 36, pos: [0, 0]}
+  stimulus_circle: {type: circle, radius: 70, fillColor: "#3B82F6", lineColor: "#111827", lineWidth: 3, pos: [0, 0]}
+  stimulus_square: {type: rect, width: 140, height: 140, fillColor: "#F97316", lineColor: "#111827", lineWidth: 3, pos: [0, 0]}
+  stimulus_triangle: {type: polygon, edges: 3, size: 155, fillColor: "#22C55E", lineColor: "#111827", lineWidth: 3, pos: [0, 0]}
+  stimulus_diamond: {type: polygon, edges: 4, size: 140, ori: 45, fillColor: "#A855F7", lineColor: "#111827", lineWidth: 3, pos: [0, 0]}
+  stimulus_pentagon: {type: polygon, edges: 5, size: 150, fillColor: "#EAB308", lineColor: "#111827", lineWidth: 3, pos: [0, 0]}
+  stimulus_hexagon: {type: polygon, edges: 6, size: 150, fillColor: "#14B8A6", lineColor: "#111827", lineWidth: 3, pos: [0, 0]}
+triggers:
+  map: {exp_onset: 1, exp_end: 2, block_onset: 3, block_end: 4, stimulus_ss2_onset: 12, stimulus_ss3_onset: 13, stimulus_ss4_onset: 14, stimulus_ss5_onset: 15, stimulus_ss6_onset: 16, response_key_1: 21, response_key_2: 22, response_key_3: 23, response_timeout: 29, feedback_correct: 31, feedback_incorrect: 32, feedback_timeout: 39, iti_onset: 40, good_bye_onset: 60}
+  driver: {type: serial_url, url: "loop://", baudrate: 115200, timeout: 1, prefix: [1, 225, 1, 0]}
+  policy: {strict: false}
+  timing: {post_delay_s: 0.001}
+qa:
+  output_dir: outputs/qa
+  enable_scaling: true
+  timing_scale: 0.05
+  min_frames: 1
+  strict: false
+  max_wait_s: 45.0
+  acceptance_criteria:
+    required_columns: [trial_id, block_id, block_idx, condition, condition_id, set_size, stimulus_id, shape_id, fill_color, correct_key, stimulus_iteration, sequence_index, delay_trials, response_key, response_rt, response_correct, timed_out, reward, outcome]
+    triggers_required: true
+responder:
+  type: responders.task_sampler:TaskSamplerResponder
+  kwargs: {base_accuracy: 0.45, learning_gain: 0.10, rt_mean_s: 0.05, rt_sd_s: 0.01}

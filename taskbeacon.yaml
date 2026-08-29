@@ -1,0 +1,23 @@
+id: T000111
+slug: rlwm-set-size-learning-task
+title: RLWM Set-Size Learning Task
+acquisition: behavior
+variant: baseline
+license: MIT
+language: Chinese
+canonical: true
+cognitive_domain: [reinforcement-learning, working-memory, instrumental-learning]
+maturity: smoke_tested
+version:
+  release_tag: v0.1.0
+contracts:
+  taps: v0.2.0
+runtime:
+  profile: psyflow
+  entrypoint: main.py
+evidence:
+  - https://doi.org/10.1038/s41562-025-02340-0
+  - https://doi.org/10.1111/j.1460-9568.2011.07980.x
+  - https://doi.org/10.1523/JNEUROSCI.0989-14.2014
+  - https://doi.org/10.1523/JNEUROSCI.2700-16.2017
+maintainer: [TaskBeacon]

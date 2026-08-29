@@ -1,0 +1,110 @@
+[
+  {
+    "id": "PAPER_PRIMARY",
+    "title": "A habit and working memory model as an alternative account of human reward-based learning",
+    "authors": [],
+    "year": 2025,
+    "journal": "Nature Human Behaviour",
+    "doi_or_url": "https://www.nature.com/articles/s41562-025-02340-0",
+    "citation_count": 7,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "primary_protocol_source",
+      "protocol",
+      "task_logic",
+      "timing",
+      "stimuli"
+    ],
+    "parameter_bindings": {},
+    "notes": "User-provided primary source; deterministic RLWM protocol and shared methods.",
+    "source_kind": "url",
+    "source_locator": "https://www.nature.com/articles/s41562-025-02340-0",
+    "attachments": {
+      "paper_pdf": null,
+      "methods_path": null
+    }
+  },
+  {
+    "id": "COLLINS_FRANK_2012",
+    "title": "How much of reinforcement learning is working memory, not reinforcement learning? A behavioral, computational, and neurogenetic analysis",
+    "authors": [
+      "Anne G. E. Collins",
+      "Michael J. Frank"
+    ],
+    "year": 2012,
+    "journal": "European Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1111/j.1460-9568.2011.07980.x",
+    "citation_count": 344,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "original_protocol",
+      "block_familiarization",
+      "response_mapping",
+      "stimulus_schedule",
+      "deterministic_feedback"
+    ],
+    "parameter_bindings": {
+      "set_sizes": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "response_actions": 3,
+      "stimulus_duration_s": 2.0,
+      "minimum_iterations": 9,
+      "maximum_iterations": 15
+    },
+    "notes": "Original RLWM protocol. Citation count from Europe PMC on 2026-08-29; author manuscript is available in PMC (PMC3390186)."
+  },
+  {
+    "id": "COLLINS_ET_AL_2014",
+    "title": "Working memory contributions to reinforcement learning impairments in schizophrenia",
+    "authors": [
+      "Anne G. E. Collins",
+      "Jessica K. Brown",
+      "James M. Gold",
+      "James A. Waltz",
+      "Michael J. Frank"
+    ],
+    "year": 2014,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/JNEUROSCI.0989-14.2014",
+    "citation_count": 176,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "clinical_replication",
+      "set_size_manipulation",
+      "construct_validity"
+    ],
+    "parameter_bindings": {},
+    "notes": "Open author manuscript in PMC (PMC4188972); citation count from Europe PMC on 2026-08-29."
+  },
+  {
+    "id": "COLLINS_ET_AL_2017",
+    "title": "Working Memory Load Strengthens Reward Prediction Errors",
+    "authors": [
+      "Anne G. E. Collins",
+      "Bianca Ciullo",
+      "Michael J. Frank",
+      "David Badre"
+    ],
+    "year": 2017,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/JNEUROSCI.2700-16.2017",
+    "citation_count": 108,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "eeg_replication",
+      "load_manipulation",
+      "trial_timing_context"
+    ],
+    "parameter_bindings": {},
+    "notes": "Open author manuscript in PMC (PMC5413179); citation count from Europe PMC on 2026-08-29."
+  }
+]

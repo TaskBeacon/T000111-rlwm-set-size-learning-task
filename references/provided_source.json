@@ -1,0 +1,25 @@
+{
+  "id": "PAPER_PRIMARY",
+  "title": "A habit and working memory model as an alternative account of human reward-based learning",
+  "authors": [],
+  "year": 2025,
+  "journal": "Nature Human Behaviour",
+  "doi_or_url": "https://www.nature.com/articles/s41562-025-02340-0",
+  "citation_count": 7,
+  "is_high_impact": true,
+  "open_access": true,
+  "used_for": [
+    "protocol",
+    "task_logic",
+    "timing",
+    "stimuli"
+  ],
+  "parameter_bindings": {},
+  "notes": "User-provided primary source; deterministic RLWM protocol and shared methods.",
+  "source_kind": "url",
+  "source_locator": "https://www.nature.com/articles/s41562-025-02340-0",
+  "attachments": {
+    "paper_pdf": null,
+    "methods_path": null
+  }
+}
