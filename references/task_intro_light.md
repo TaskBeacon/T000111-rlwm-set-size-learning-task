@@ -1,10 +1,10 @@
 # 强化学习—工作记忆集合大小学习任务：容量约束、学习交互与解释边界
 
-反馈驱动的工具性学习同时依赖对近期事件的保持和跨次经验的积累，仅依据正确率随练习上升，难以区分两类过程。强化学习—工作记忆集合大小学习任务（Reinforcement Learning and Working Memory Set-Size Learning Task, RLWM）通过改变同一区组内需要学习的刺激—动作对应关系数量，并分析同一刺激重复出现的间隔，为这一分离提供了实验约束。其价值在于检验容量、遗忘和学习经验如何共同塑造选择，而不能由任务名称预先认定全部表现来自强化学习。近期综述强调，工作记忆与强化学习在行为和神经实现上存在相互影响，忽略其中任何一方均可能改变对另一方的估计（[Yoo & Collins, 2022](https://doi.org/10.1162/jocn_a_01808)）。
+反馈驱动的工具性学习通常由近期事件保持与跨试次经验积累共同支持；仅依据正确率随练习上升，难以区分两类过程。强化学习—工作记忆集合大小学习任务（Reinforcement Learning and Working Memory Set-Size Learning Task, RLWM）通过改变同一区组内需要学习的刺激—动作对应关系数量，并分析同一刺激重复出现的间隔，为这一分离提供了实验约束。其价值在于检验容量、遗忘和学习经验如何共同塑造选择，而不能由任务名称预先认定全部表现来自强化学习。近期综述强调，工作记忆与强化学习在行为和神经实现上存在相互影响，忽略其中任何一方均可能改变对另一方的估计（[Yoo & Collins, 2022](https://doi.org/10.1162/jocn_a_01808)）。
 
 ## 1. 范式提出与理论背景
 
-Collins 与 Frank 于 2012 年提出这一范式，针对的是常规强化学习模型将快速记忆策略误归入学习率的问题。经典模型以奖励预测误差（reward prediction error, RPE）更新动作价值；若某刺激的动作和反馈历史相同，其学习原则上不应因区组内其他刺激增多而系统性改变。工作记忆则受到并行保持数量和重复间隔的约束。因此，集合大小效应与间隔效应为超出单一增量学习模型的行为成分提供了证据（[Collins & Frank, 2012](https://doi.org/10.1111/j.1460-9568.2011.07980.x)）。
+RLWM 延续了条件联合学习中依靠试误反馈习得任意刺激—反应映射的基本操作；早期额叶损伤研究已用此类任务检验映射习得及保持（[Petrides, 1985](https://doi.org/10.1016/0028-3932(85)90062-4)）。Collins 与 Frank 于 2012 年进一步参数化同一区组内的映射数量，针对常规强化学习模型将快速记忆策略误归入学习率的问题。经典模型以奖励预测误差（reward prediction error, RPE）更新动作价值；若某刺激的动作和反馈历史相同，其学习原则上不应因区组内其他刺激增多而系统性改变。工作记忆则受到并行保持数量和重复间隔的约束。因此，集合大小效应与间隔效应为超出单一增量学习模型的行为成分提供了证据（[Collins & Frank, 2012](https://doi.org/10.1111/j.1460-9568.2011.07980.x)）。
 
 RLWM 模型据此将快速、容量受限且易遗忘的工作记忆成分，与较慢的经验积累成分相结合，并允许二者对选择的贡献随负荷和练习变化。工作记忆中的一次有效编码可以迅速支持正确选择；较慢成分则在反复经验后继续支持表现。这里的“双成分”是一组可检验的计算假设，不能直接等同于两个完全独立的脑区系统。后续研究逐渐从比较两种成分对选择的权重，转向检验工作记忆是否还改变价值预期、反馈更新和长期保持（[Collins & Frank, 2018](https://doi.org/10.1073/pnas.1720963115); [Yoo & Collins, 2022](https://doi.org/10.1162/jocn_a_01808)）。
 
@@ -106,6 +106,8 @@ Frogner, E. R., Dahl, A., Kjelkenes, R., Moberget, T., Collins, A. G. E., Westly
 Ging-Jehli, N. R., Rac-Lubashevsky, R., Bera, K., Boudewyn, M. A., Carter, C. S., Erickson, M. A., Gold, J. M., Luck, S. J., Ragland, J. D., Yonelinas, A. P., MacDonald, A. W., III, Barch, D. M., & Frank, M. J. (2026). Model-based electroencephalography phenotyping uncovers distinct neurocomputational mechanisms underlying learning impairments across psychopathologies. *Biological Psychiatry: Global Open Science, 6*(2), 100660. [https://doi.org/10.1016/j.bpsgos.2025.100660](https://doi.org/10.1016/j.bpsgos.2025.100660)
 
 McDougle, S. D., & Collins, A. G. E. (2021). Modeling the influence of working memory, reinforcement, and action uncertainty on reaction time and choice during instrumental learning. *Psychonomic Bulletin & Review, 28*(1), 20–39. [https://doi.org/10.3758/s13423-020-01774-z](https://doi.org/10.3758/s13423-020-01774-z)
+
+Petrides, M. (1985). Deficits on conditional associative-learning tasks after frontal- and temporal-lobe lesions in man. *Neuropsychologia, 23*(5), 601–614. [https://doi.org/10.1016/0028-3932(85)90062-4](https://doi.org/10.1016/0028-3932(85)90062-4)
 
 Rac-Lubashevsky, R., Cremer, A., Collins, A. G. E., Frank, M. J., & Schwabe, L. (2023). Neural index of reinforcement learning predicts improved stimulus–response retention under high working memory load. *Journal of Neuroscience, 43*(17), 3131–3143. [https://doi.org/10.1523/JNEUROSCI.1274-22.2023](https://doi.org/10.1523/JNEUROSCI.1274-22.2023)
 
