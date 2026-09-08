@@ -44,7 +44,7 @@ stimuli:
   stimulus_hexagon: {type: polygon, edges: 6, size: 150, fillColor: "#14B8A6", lineColor: "#111827", lineWidth: 3, pos: [0, 0]}
 triggers:
   map: {exp_onset: 1, exp_end: 2, block_onset: 3, block_end: 4, stimulus_ss2_onset: 12, stimulus_ss3_onset: 13, stimulus_ss4_onset: 14, stimulus_ss5_onset: 15, stimulus_ss6_onset: 16, response_key_1: 21, response_key_2: 22, response_key_3: 23, response_timeout: 29, feedback_correct: 31, feedback_incorrect: 32, feedback_timeout: 39, iti_onset: 40, good_bye_onset: 60}
-  driver: {type: serial_url, url: "loop://", baudrate: 115200, timeout: 1, prefix: [1, 225, 1, 0]}
+  driver: {type: mock, print_codes: true}
   policy: {strict: false}
   timing: {post_delay_s: 0.001}
 sim:
